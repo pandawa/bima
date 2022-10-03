@@ -1,0 +1,8 @@
+/* Reset */
+@import '../../../../node_modules/tailwindcss/base.css';
+
+/* Components */
+@import '../../../../node_modules/tailwindcss/components.css';
+
+/* Utilities */
+@import '../../../../node_modules/tailwindcss/utilities.css';

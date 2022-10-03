@@ -1,0 +1,7 @@
+__defines:
+  Controller: Bima\App\Http\Controller
+
+app:
+  type: get
+  uri: /app
+  controller: ${Controller}\DashboardController@index
