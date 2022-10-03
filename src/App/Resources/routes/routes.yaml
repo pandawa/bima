@@ -1,7 +1,3 @@
-__defines:
-  Controller: Bima\App\Http\Controller
-
-app:
-  type: get
-  uri: /app
-  controller: ${Controller}\DashboardController@index
+instance:
+  type: group
+  children: instances.yaml

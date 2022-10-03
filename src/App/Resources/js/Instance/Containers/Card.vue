@@ -2,6 +2,7 @@
     <instance-card class="mb-4"
                    :running="running"
                    :stats="stats"
+                   :url="url"
                    :connecting="connecting"
                    :instance="instance" />
 </template>
@@ -17,12 +18,14 @@ export default {
 
     props: {
         instance: Object,
+        url: String,
     },
 
     data() {
         return {
             connecting: true,
             running: false,
+            timeout: null,
             stats: {
                 jobsPerMinute: null,
                 processes: null,
@@ -34,11 +37,17 @@ export default {
 
     mounted() {
         this.setState(true, false);
-        this.fetchStats();
+
+        setTimeout(() => this.refreshPeriodically(), 1000);
     },
+
+    unmounted() {
+        clearTimeout(this.timeout);
+    },
+
     methods: {
         fetchStats() {
-            this.axios
+            return this.axios
                 .get(this.getUrl('/api/stats'), {
                     headers: {
                         Authorization: `Bearer ${this.instance.secret}`,
@@ -56,24 +65,38 @@ export default {
                     } else {
                         this.stats.maxWaitTime = null;
                     }
-
-                    setTimeout(() => this.fetchStats(), 5000);
                 })
                 .catch(() => {
                     this.setState(true, false);
-                    setTimeout(() => {
-                        this.setState(true, false);
-                        this.fetchStats()
-                    }, 5000);
+                    this.reset();
                 });
         },
+
+        reset() {
+            this.stats = {
+                failedJobs: null,
+                processes: null,
+                jobsPerMinute: null,
+                maxWaitTime: null,
+            };
+        },
+
         getUrl(uri = '') {
             return this.instance.url.trimEnd('/') + uri;
         },
+
         setState(connecting, running) {
             this.running = running;
             this.connecting = connecting;
-        }
+        },
+
+        refreshPeriodically() {
+            Promise.all([
+                this.fetchStats(),
+            ]).finally(() => {
+                this.timeout = setTimeout(() => this.refreshPeriodically(), 5000);
+            });
+        },
     }
 }
 </script>

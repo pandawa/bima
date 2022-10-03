@@ -15,14 +15,16 @@
             </div>
         </header>
         <div class="mx-auto max-w-3xl mt-5">
-            <instance-card class="mb-4" v-for="instance in instances" :instance="instance" />
+            <instance-card v-for="instance in instances" class="mb-4"
+                           :url="'/instances/' + instance.id"
+                           :instance="instance" />
         </div>
     </Layout>
 </template>
 
 <script>
-import Layout from '../../Shared/Layouts/StackedLayout';
-import InstanceCard from '../Containers/Card';
+import Layout from '../../Shared/Layouts/StackedLayout'
+import InstanceCard from '../Containers/Card'
 
 export default {
     components: {

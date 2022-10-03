@@ -1,0 +1,12 @@
+__defines:
+  Controller: Bima\App\Http\Controller
+
+instance.list:
+  type: get
+  uri: /
+  controller: ${Controller}\InstanceController@index
+
+instance.show:
+  type: get
+  uri: /instances/{id}
+  controller: ${Controller}\InstanceController@show
