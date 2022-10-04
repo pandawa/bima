@@ -46,11 +46,17 @@
                 </div>
                 <div class="mt-5 flex flex-1 flex-col">
                     <nav class="flex-1 space-y-1 px-2 pb-4">
-                        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']">
+                        <Link v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']">
                             <component :is="item.icon" class="mr-3 h-6 w-6 flex-shrink-0 text-indigo-300" aria-hidden="true" />
                             {{ item.name }}
-                        </a>
+                        </Link>
                     </nav>
+                </div>
+                <div class="p-4">
+                    <Link href="/" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                        <component is="arrow-left-circle-icon" class="mr-2 h-6 w-6 flex-shrink-0 text-indigo-300" aria-hidden="true" />
+                        {{ instance.name }}
+                    </Link>
                 </div>
             </div>
         </div>
@@ -64,7 +70,7 @@
                     <div class="flex flex-1 items-center">
                         <slot name="header">
                             <h1 class="text-lg font-semibold text-gray-900">
-                                {{ current }}: {{ instance.name }}
+                                {{ current }}
                             </h1>
                         </slot>
                     </div>
@@ -99,6 +105,7 @@
 
 <script>
 import {
+    ArrowLeftCircleIcon,
     Bars3BottomLeftIcon,
     ChartPieIcon,
     CheckCircleIcon,
@@ -106,7 +113,7 @@ import {
     PauseCircleIcon,
     RectangleStackIcon,
     ServerIcon,
-    XCircleIcon
+    XCircleIcon,
 } from "@heroicons/vue/24/outline";
 
 import {
@@ -120,6 +127,8 @@ import {
     TransitionRoot,
 } from '@headlessui/vue'
 
+import {Link} from "@inertiajs/inertia-vue3";
+
 export default {
     components: {
         Dialog,
@@ -130,6 +139,7 @@ export default {
         MenuItems,
         TransitionChild,
         TransitionRoot,
+        Link,
 
         ChartPieIcon,
         CheckCircleIcon,
@@ -138,7 +148,8 @@ export default {
         RectangleStackIcon,
         ServerIcon,
         XCircleIcon,
-        Bars3BottomLeftIcon
+        Bars3BottomLeftIcon,
+        ArrowLeftCircleIcon,
     },
 
     props: {

@@ -38,7 +38,7 @@ export default {
     mounted() {
         this.setState(true, false);
 
-        setTimeout(() => this.refreshPeriodically(), 1000);
+        this.refreshPeriodically();
     },
 
     unmounted() {

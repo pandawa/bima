@@ -1,7 +1,7 @@
 <template>
     <side-bar-layout :instance="instance" :current="'Dashboard'">
         <template v-slot:header>
-            <h1 class="text-lg font-semibold text-gray-900 mr-3">{{ instance.name }}</h1>
+            <h1 class="text-lg font-semibold text-gray-900 mr-3">Dashboard</h1>
             <connection-status :connecting="connecting" :running="running" />
         </template>
         <div class="py-6">
