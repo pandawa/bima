@@ -40,7 +40,7 @@
                             {{ superVisorDisplayName(supervisor.name, worker.name) }}
                         </td>
                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {{ countProcesses(supervisor.processes) }} / {{ stats.totalProcesses }}
+                            {{ countProcesses(supervisor.processes) }} / {{ supervisorGroups[superVisorDisplayName(supervisor.name, worker.name)] ?? 0 }}
                         </td>
                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             {{ supervisor.options.memory }}MB
@@ -79,6 +79,18 @@ export default {
         stats: Object,
     },
 
+    data() {
+        return {
+            supervisorGroups: [],
+        };
+    },
+
+    watch: {
+        workers() {
+            this.supervisorGroups = this.countGroupSupervisors(this.workers);
+        }
+    },
+
     methods: {
         superVisorDisplayName(supervisor, worker) {
             return _.replace(supervisor, worker + ':', '');
@@ -87,6 +99,19 @@ export default {
         countProcesses(processes) {
             return _.chain(processes).values().sum().value().toLocaleString()
         },
+
+        countGroupSupervisors(workers) {
+            let groups = [];
+            for (const supervisors of _.map(workers, 'supervisors').filter(spv => !!spv)) {
+                for (const supervisor of supervisors) {
+                    const name = supervisor.name.substring(supervisor.name.indexOf(':') + 1);
+
+                    groups[name] = parseInt((groups[name] ?? 0)) + parseInt(this.countProcesses(supervisor.processes));
+                }
+            }
+
+            return groups;
+        }
     }
 }
 </script>
