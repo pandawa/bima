@@ -30876,28 +30876,21 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.json-view-theme {
-  background: rgba(31, 41, 55, 1) !important;
+.vjs-tree-node {
+  background: transparent !important;
+}
+
+.vjs-tree {
   font-size: 1rem !important;
-  line-height: 1.3rem !important;
+  font-weight: 500 !important;
 }
 
-.json-view-theme .jv-key,
-.json-view-theme .jv-object,
-.json-view-theme .jv-array,
-.json-view-theme .jv-node:after{
-  color: #fff !important;
+.vjs-tree-node {
+  line-height: 1.5rem !important;
 }
 
-.json-view-theme .jv-string {
-  color: #dacb4d !important;
-}
-
-.json-view-theme .jv-number {
-}
-
-.json-view-theme .jv-node .jv-node {
-  margin-left: 40px !important;
+.vjs-tree-node .vjs-indent-unit {
+  width: 2em !important;
 }
 
 @media (min-width: 640px) {

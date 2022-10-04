@@ -6,7 +6,8 @@
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Queue</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Queued At</th>
                 <th v-if="type === 'completed'" scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Completed At</th>
-                <th v-if="type === 'completed'" scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Runtime</th>
+                <th v-if="type === 'failed'" scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Failed At</th>
+                <th v-if="type === 'completed' || type === 'failed'" scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Runtime</th>
             </tr>
         </thead>
         <tbody class="bg-white" v-if="jobs && jobs.length">
@@ -20,7 +21,7 @@
         <template v-else>
             <tbody>
                 <tr>
-                    <td :colspan="type === 'completed' ? 5 : 3" class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                    <td :colspan="type === 'completed' || type === 'failed' ? 5 : 3" class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                         There aren't any jobs
                     </td>
                 </tr>

@@ -2,7 +2,7 @@
     <tr class="hover:bg-gray-100">
         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
             <div class="flex items-center">
-                <Link :href="'/instances/' + instance.id + '/'+ type +'/' + job.id">
+                <Link class="font-medium text-indigo-500" :href="'/instances/' + instance.id + '/'+ type +'/' + job.id">
                     {{ jobBaseName(job.name) }}
                 </Link>
                 <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800"
@@ -13,7 +13,7 @@
             </div>
             <div class="text-gray-500 text-sm font-normal mt-1">
                 <span v-if="job.payload.tags && job.payload.tags.length" class="text-break">
-                    Tags: {{ job.payload.tags && job.payload.tags.length ? job.payload.tags.slice(0,3).join(', ') : '' }}<span v-if="job.payload.tags.length > 3"> ({{ job.payload.tags.length - 3 }} more)</span>
+                    Tags: {{ job.payload.tags && job.payload.tags.length ? job.payload.tags.slice(0,1).join(', ') : '' }}<span v-if="job.payload.tags.length > 1"> ({{ job.payload.tags.length - 1 }} more)</span>
                 </span>
             </div>
         </td>
@@ -29,6 +29,14 @@
             </td>
             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 pr-4">
                 {{ job.completed_at ? (job.completed_at - job.reserved_at).toFixed(2)+'s' : '-' }}
+            </td>
+        </template>
+        <template v-if="type === 'failed'">
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 pr-4">
+                {{ readableTimestamp(job.failed_at) }}
+            </td>
+            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 pr-4">
+                {{ job.failed_at ? String((job.failed_at - job.reserved_at).toFixed(2))+'s' : '-' }}
             </td>
         </template>
     </tr>

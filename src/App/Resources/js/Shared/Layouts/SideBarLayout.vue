@@ -154,7 +154,7 @@ export default {
                 // { name: 'Batches', href: '#', icon: RectangleStackIcon, current: false },
                 { name: 'Pending Jobs', href: '/instances/' + this.instance.id + '/pending', icon: PauseCircleIcon, current: false },
                 { name: 'Completed Jobs', href: '/instances/' + this.instance.id + '/completed', icon: CheckCircleIcon, current: false },
-                { name: 'Failed Jobs', href: '#', icon: XCircleIcon, current: false },
+                { name: 'Failed Jobs', href: '/instances/' + this.instance.id + '/failed', icon: XCircleIcon, current: false },
             ],
             userNavigation: [
                 { name: 'Your Profile', href: '#' },

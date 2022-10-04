@@ -37,6 +37,7 @@ class JobController
         return match ($type) {
             'pending' => 'Pending Jobs',
             'completed' => 'Completed Jobs',
+            'failed' => 'Failed Jobs',
         };
     }
 }
