@@ -6,3 +6,28 @@
 
 /* Utilities */
 @import '../../../../node_modules/tailwindcss/utilities.css';
+
+.json-view-theme {
+    background: rgba(31, 41, 55, 1) !important;
+    font-size: 1rem !important;
+    line-height: 1.3rem !important;
+}
+
+.json-view-theme .jv-key,
+.json-view-theme .jv-object,
+.json-view-theme .jv-array,
+.json-view-theme .jv-node:after{
+    color: #fff !important;
+}
+
+.json-view-theme .jv-string {
+    color: #dacb4d !important;
+}
+
+.json-view-theme .jv-number {
+
+}
+
+.json-view-theme .jv-node .jv-node {
+    margin-left: 40px !important;
+}

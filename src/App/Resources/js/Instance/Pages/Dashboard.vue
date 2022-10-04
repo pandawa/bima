@@ -1,5 +1,5 @@
 <template>
-    <side-bar-layout>
+    <side-bar-layout :instance="instance" :current="'Dashboard'">
         <template v-slot:header>
             <h1 class="text-lg font-semibold text-gray-900 mr-3">{{ instance.name }}</h1>
             <connection-status :connecting="connecting" :running="running" />
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="rounded-b-lg overflow-hidden">
-                        <queue-workers :stats="stats" :workers="workers" />
+                        <queue-workers :workers="workers" />
                     </div>
                 </div>
                 <!-- /End replace -->

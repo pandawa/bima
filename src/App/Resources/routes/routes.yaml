@@ -1,3 +1,7 @@
 instance:
   type: group
   children: instances.yaml
+
+pending_job:
+  type: group
+  children: jobs.yaml

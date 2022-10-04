@@ -13,11 +13,11 @@
         </thead>
         <tbody>
             <template v-for="worker in workers">
-                <tr>
-                    <td colspan="6" class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 bg-gray-100 border-b">
+                <tr class="border-t border-gray-200">
+                    <th colspan="6" scope="colgroup" class="bg-gray-50 px-4 py-2 text-left text-sm font-semibold text-gray-900 sm:px-6 border-b">
                         {{ worker.name }}
-                    </td>
-                    <td class="text-right whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-medium bg-gray-100 border-b">
+                    </th>
+                    <td class="bg-gray-50 px-4 py-2 text-left text-sm font-semibold text-gray-900 border-b">
                         <div v-if="worker.status == 'paused'" class="flex items-center text-yellow-600 ml-auto">
                             <PauseCircleIcon class="mr-1 h-6 w-6"></PauseCircleIcon>
                             Paused
@@ -62,10 +62,7 @@
 </template>
 
 <script>
-import {
-    CheckCircleIcon,
-    PauseCircleIcon,
-} from '@heroicons/vue/24/outline'
+import {CheckCircleIcon, PauseCircleIcon,} from '@heroicons/vue/24/outline'
 import _ from "lodash";
 
 export default {
@@ -75,8 +72,7 @@ export default {
     },
 
     props: {
-        workers: Array,
-        stats: Object,
+        workers: Object,
     },
 
     data() {

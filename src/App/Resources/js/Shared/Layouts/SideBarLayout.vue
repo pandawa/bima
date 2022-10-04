@@ -63,7 +63,9 @@
                 <div class="flex flex-1 justify-between px-4">
                     <div class="flex flex-1 items-center">
                         <slot name="header">
-                            <h1 class="text-lg font-semibold text-gray-900">{{ title }}</h1>
+                            <h1 class="text-lg font-semibold text-gray-900">
+                                {{ current }}: {{ instance.name }}
+                            </h1>
                         </slot>
                     </div>
                     <div class="ml-4 flex items-center md:ml-6">
@@ -95,8 +97,18 @@
     </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
+import {
+    Bars3BottomLeftIcon,
+    ChartPieIcon,
+    CheckCircleIcon,
+    ComputerDesktopIcon,
+    PauseCircleIcon,
+    RectangleStackIcon,
+    ServerIcon,
+    XCircleIcon
+} from "@heroicons/vue/24/outline";
+
 import {
     Dialog,
     DialogPanel,
@@ -107,40 +119,64 @@ import {
     TransitionChild,
     TransitionRoot,
 } from '@headlessui/vue'
-import {
-    Bars3BottomLeftIcon,
-    XMarkIcon,
-    ServerIcon,
-    ComputerDesktopIcon,
-    ChartPieIcon,
-    RectangleStackIcon,
-    PauseCircleIcon,
-    CheckCircleIcon,
-    XCircleIcon,
-} from '@heroicons/vue/24/outline'
 
-const navigation = [
-    { name: 'Dashboard', href: '#', icon: ServerIcon, current: true },
-    { name: 'Monitoring', href: '#', icon: ComputerDesktopIcon, current: false },
-    { name: 'Metrics', href: '#', icon: ChartPieIcon, current: false },
-    { name: 'Batches', href: '#', icon: RectangleStackIcon, current: false },
-    { name: 'Pending Jobs', href: '#', icon: PauseCircleIcon, current: false },
-    { name: 'Completed Jobs', href: '#', icon: CheckCircleIcon, current: false },
-    { name: 'Failed Jobs', href: '#', icon: XCircleIcon, current: false },
-]
-const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-]
-
-const sidebarOpen = ref(false)
-</script>
-
-<script>
 export default {
+    components: {
+        Dialog,
+        DialogPanel,
+        Menu,
+        MenuButton,
+        MenuItem,
+        MenuItems,
+        TransitionChild,
+        TransitionRoot,
+
+        ChartPieIcon,
+        CheckCircleIcon,
+        ComputerDesktopIcon,
+        PauseCircleIcon,
+        RectangleStackIcon,
+        ServerIcon,
+        XCircleIcon,
+        Bars3BottomLeftIcon
+    },
+
     props: {
-        title: String,
+        instance: Object,
+        current: String,
+    },
+    data() {
+        return {
+            navigation: [
+                { name: 'Dashboard', href: '/instances/' + this.instance.id, icon: ServerIcon, current: false },
+                // { name: 'Monitoring', href: '#', icon: ComputerDesktopIcon, current: false },
+                // { name: 'Metrics', href: '#', icon: ChartPieIcon, current: false },
+                // { name: 'Batches', href: '#', icon: RectangleStackIcon, current: false },
+                { name: 'Pending Jobs', href: '/instances/' + this.instance.id + '/pending', icon: PauseCircleIcon, current: false },
+                { name: 'Completed Jobs', href: '/instances/' + this.instance.id + '/completed', icon: CheckCircleIcon, current: false },
+                { name: 'Failed Jobs', href: '#', icon: XCircleIcon, current: false },
+            ],
+            userNavigation: [
+                { name: 'Your Profile', href: '#' },
+                { name: 'Settings', href: '#' },
+                { name: 'Sign out', href: '#' },
+            ],
+            sidebarOpen: false,
+        };
+    },
+
+    mounted() {
+        for (const nav of this.navigation) {
+            if (nav.name === this.current) {
+                nav.current = true;
+
+                continue;
+            }
+
+            if (nav.current !== false) {
+                nav.current = false;
+            }
+        }
     }
 }
 </script>

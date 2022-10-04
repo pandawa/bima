@@ -1,0 +1,12 @@
+__defines:
+  Controller: Bima\App\Http\Controller
+
+job.list:
+  type:       get
+  uri:        /instances/{id}/{type}
+  controller: ${Controller}\JobController@index
+
+job.detail:
+  type:       get
+  uri:        /instances/{id}/{type}/{job}
+  controller: ${Controller}\JobController@show
