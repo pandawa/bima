@@ -7,7 +7,7 @@
                         <h1 class="text-3xl font-semibold leading-tight tracking-tight text-gray-900">Instances</h1>
                     </div>
                     <div class="mt-4 flex md:mt-0 md:ml-4">
-                        <button type="button" class="ml-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        <button @click.prevent="showCreate = !showCreate" type="button" class="ml-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                             New Instance
                         </button>
                     </div>
@@ -15,24 +15,49 @@
             </div>
         </header>
         <div class="mx-auto max-w-3xl mt-5">
-            <instance-card v-for="instance in instances" class="mb-4"
+            <instance-card v-for="instance in availableInstances" class="mb-4"
                            :url="'/instances/' + instance.id"
                            :instance="instance" />
         </div>
+
+        <create-instance @created="addInstance($event)" @closed="showCreate = false" :show="showCreate" />
     </Layout>
 </template>
 
 <script>
 import Layout from '../../Shared/Layouts/StackedLayout'
 import InstanceCard from '../Containers/Card'
+import CreateInstance from "@/Instance/Containers/Create";
 
 export default {
     components: {
         Layout,
-        InstanceCard
+        InstanceCard,
+        CreateInstance
     },
     props: {
         instances: Array,
     },
+
+    data() {
+        return {
+            showCreate: false,
+            availableInstances: [],
+        };
+    },
+
+    mounted() {
+        this.availableInstances = this.instances;
+    },
+
+    methods: {
+        addInstance(instance) {
+            this.showCreate = false;
+            this.availableInstances = [
+                instance,
+                ...this.availableInstances,
+            ];
+        }
+    }
 }
 </script>

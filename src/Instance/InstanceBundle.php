@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bima\Instance;
 
 use Pandawa\Bundle\DatabaseBundle\Plugin\ImportMigrationPlugin;
-use Pandawa\Bundle\RoutingBundle\Plugin\ImportRoutesPlugin;
+use Pandawa\Bundle\ResourceBundle\Plugin\ImportResourceAnnotationPlugin;
 use Pandawa\Component\Foundation\Bundle\Bundle;
 use Pandawa\Contracts\Foundation\HasPluginInterface;
 
@@ -18,7 +18,7 @@ class InstanceBundle extends Bundle implements HasPluginInterface
     {
         return [
             new ImportMigrationPlugin(),
-            new ImportRoutesPlugin(),
+            new ImportResourceAnnotationPlugin(),
         ];
     }
 }

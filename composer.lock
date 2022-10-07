@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa01d412c53ce33ebcf60b6fe2316dc0",
+    "content-hash": "1bceca450a91e32cc774bf56b91eaed2",
     "packages": [
         {
             "name": "brick/math",
@@ -1911,6 +1911,357 @@
             "time": "2022-08-01T11:03:24+00:00"
         },
         {
+            "name": "pandawa/annotation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/annotation.git",
+                "reference": "f0de338de29d37d320fa58d70a442d6835ac7864"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/annotation/zipball/f0de338de29d37d320fa58d70a442d6835ac7864",
+                "reference": "f0de338de29d37d320fa58d70a442d6835ac7864",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/annotation-contracts": "^5.0",
+                "php": ">=8.1",
+                "spiral/tokenizer": "^2.13"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Component\\Annotation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa annotation loader component",
+            "support": {
+                "issues": "https://github.com/pandawa/annotation/issues",
+                "source": "https://github.com/pandawa/annotation/tree/master"
+            },
+            "time": "2022-09-08T10:11:38+00:00"
+        },
+        {
+            "name": "pandawa/annotation-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/annotation-bundle.git",
+                "reference": "0009da413b181155c1023d28fbc5b884d825a779"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/annotation-bundle/zipball/0009da413b181155c1023d28fbc5b884d825a779",
+                "reference": "0009da413b181155c1023d28fbc5b884d825a779",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/annotation": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\AnnotationBundle\\AnnotationBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\AnnotationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa annotation bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/annotation-bundle/issues",
+                "source": "https://github.com/pandawa/annotation-bundle/tree/master"
+            },
+            "time": "2022-09-09T13:40:21+00:00"
+        },
+        {
+            "name": "pandawa/annotation-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/annotation-contracts.git",
+                "reference": "fcaa18ed9ec558467c28a3eb8c38dcc018cdf926"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/annotation-contracts/zipball/fcaa18ed9ec558467c28a3eb8c38dcc018cdf926",
+                "reference": "fcaa18ed9ec558467c28a3eb8c38dcc018cdf926",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "spiral/attributes": "^3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Contracts\\Annotation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa annotation contracts",
+            "support": {
+                "issues": "https://github.com/pandawa/annotation-contracts/issues",
+                "source": "https://github.com/pandawa/annotation-contracts/tree/master"
+            },
+            "time": "2022-08-12T10:31:58+00:00"
+        },
+        {
+            "name": "pandawa/bus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/bus.git",
+                "reference": "376a5f81caef05aabf674c300f8039307833d222"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/bus/zipball/376a5f81caef05aabf674c300f8039307833d222",
+                "reference": "376a5f81caef05aabf674c300f8039307833d222",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/bus": "^9.0",
+                "illuminate/container": "^9.0",
+                "illuminate/contracts": "^9.0",
+                "illuminate/pipeline": "^9.0",
+                "illuminate/support": "^9.0",
+                "pandawa/bus-contracts": "^5.0",
+                "php": ">=8.1",
+                "symfony/serializer": "^6.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Component\\Bus\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa bus component",
+            "support": {
+                "issues": "https://github.com/pandawa/bus/issues",
+                "source": "https://github.com/pandawa/bus/tree/master"
+            },
+            "time": "2022-09-26T06:52:22+00:00"
+        },
+        {
+            "name": "pandawa/bus-annotations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/bus-annotations.git",
+                "reference": "3858ac159739b8564089b4b35439ca65756b9a3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/bus-annotations/zipball/3858ac159739b8564089b4b35439ca65756b9a3e",
+                "reference": "3858ac159739b8564089b4b35439ca65756b9a3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "spiral/attributes": "^3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Annotations\\Bus\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa bus annotations",
+            "support": {
+                "issues": "https://github.com/pandawa/bus-annotations/issues",
+                "source": "https://github.com/pandawa/bus-annotations/tree/master"
+            },
+            "time": "2022-09-06T04:29:55+00:00"
+        },
+        {
+            "name": "pandawa/bus-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/bus-bundle.git",
+                "reference": "a66852d9cb96593f05b3f064e5bf2bbb9b8dabc0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/bus-bundle/zipball/a66852d9cb96593f05b3f064e5bf2bbb9b8dabc0",
+                "reference": "a66852d9cb96593f05b3f064e5bf2bbb9b8dabc0",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/bus": "^5.0",
+                "pandawa/bus-annotations": "^5.0",
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "pandawa/serializer-bundle": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\BusBundle\\BusBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\BusBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa bus bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/bus-bundle/issues",
+                "source": "https://github.com/pandawa/bus-bundle/tree/master"
+            },
+            "time": "2022-09-30T04:38:44+00:00"
+        },
+        {
+            "name": "pandawa/bus-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/bus-contracts.git",
+                "reference": "3168db2d7c2d7a0e25f1387358ce6a1917f14b19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/bus-contracts/zipball/3168db2d7c2d7a0e25f1387358ce6a1917f14b19",
+                "reference": "3168db2d7c2d7a0e25f1387358ce6a1917f14b19",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Contracts\\Bus\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa bus contracts",
+            "support": {
+                "issues": "https://github.com/pandawa/bus-contracts/issues",
+                "source": "https://github.com/pandawa/bus-contracts/tree/master"
+            },
+            "time": "2022-09-26T06:52:26+00:00"
+        },
+        {
             "name": "pandawa/config",
             "version": "dev-master",
             "source": {
@@ -2567,6 +2918,280 @@
             "time": "2022-08-30T07:20:10+00:00"
         },
         {
+            "name": "pandawa/pagination-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/pagination-bundle.git",
+                "reference": "f972a9c96124cd7a14b9ba00a48ec044cb2b6b02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/pagination-bundle/zipball/f972a9c96124cd7a14b9ba00a48ec044cb2b6b02",
+                "reference": "f972a9c96124cd7a14b9ba00a48ec044cb2b6b02",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/pagination": "^9.0",
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\PaginationBundle\\PaginationBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\PaginationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa pagination bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/pagination-bundle/issues",
+                "source": "https://github.com/pandawa/pagination-bundle/tree/master"
+            },
+            "time": "2022-09-10T10:53:58+00:00"
+        },
+        {
+            "name": "pandawa/resource",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/resource.git",
+                "reference": "089d80f12aaf17596be6cbc8010ca14abb9fb714"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/resource/zipball/089d80f12aaf17596be6cbc8010ca14abb9fb714",
+                "reference": "089d80f12aaf17596be6cbc8010ca14abb9fb714",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "illuminate/http": "^9.0",
+                "illuminate/routing": "^9.0",
+                "illuminate/support": "^9.0",
+                "pandawa/bus-contracts": "^5.0",
+                "pandawa/eloquent-contracts": "^5.0",
+                "pandawa/resource-contracts": "^5.0",
+                "pandawa/routing-contracts": "^5.0",
+                "pandawa/transformer": "^5.0",
+                "pandawa/validation-contracts": "^5.0",
+                "php": ">=8.1",
+                "symfony/config": "^6.1",
+                "symfony/http-foundation": "^6.1",
+                "symfony/serializer": "^6.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Component\\Resource\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa api resource component",
+            "support": {
+                "issues": "https://github.com/pandawa/resource/issues",
+                "source": "https://github.com/pandawa/resource/tree/master"
+            },
+            "time": "2022-09-27T17:48:33+00:00"
+        },
+        {
+            "name": "pandawa/resource-annotations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/resource-annotations.git",
+                "reference": "1ca643a163de594ff768f08c93e5351383104af7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/resource-annotations/zipball/1ca643a163de594ff768f08c93e5351383104af7",
+                "reference": "1ca643a163de594ff768f08c93e5351383104af7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "spiral/attributes": "^3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Annotations\\Resource\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa resource annotations",
+            "support": {
+                "issues": "https://github.com/pandawa/resource-annotations/issues",
+                "source": "https://github.com/pandawa/resource-annotations/tree/master"
+            },
+            "time": "2022-09-06T12:04:38+00:00"
+        },
+        {
+            "name": "pandawa/resource-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/resource-bundle.git",
+                "reference": "132db5c7742bad72142c8cc691c4b36f927a85b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/resource-bundle/zipball/132db5c7742bad72142c8cc691c4b36f927a85b0",
+                "reference": "132db5c7742bad72142c8cc691c4b36f927a85b0",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "pandawa/pagination-bundle": "^5.0",
+                "pandawa/resource": "^5.0",
+                "pandawa/resource-annotations": "^5.0",
+                "pandawa/routing-bundle": "^5.0",
+                "pandawa/serializer-bundle": "^5.0",
+                "pandawa/translation-bundle": "^5.0",
+                "pandawa/validation-bundle": "^5.0",
+                "php": ">=8.1"
+            },
+            "suggest": {
+                "pandawa/bus-bundle": "Install this bundle to enable api with type message",
+                "pandawa/eloquent-bundle": "Install this bundle to enable api with type resource"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\ResourceBundle\\ResourceBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\ResourceBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa api resource bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/resource-bundle/issues",
+                "source": "https://github.com/pandawa/resource-bundle/tree/master"
+            },
+            "time": "2022-09-11T14:53:17+00:00"
+        },
+        {
+            "name": "pandawa/resource-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/resource-contracts.git",
+                "reference": "3f0e53b1e92652bcb8c969065b533cbc7058c1a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/resource-contracts/zipball/3f0e53b1e92652bcb8c969065b533cbc7058c1a6",
+                "reference": "3f0e53b1e92652bcb8c969065b533cbc7058c1a6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "illuminate/http": "^9.0",
+                "pandawa/transformer-contracts": "^5.0",
+                "php": ">=8.1",
+                "symfony/http-foundation": "^6.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Contracts\\Resource\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa api resource contracts",
+            "support": {
+                "issues": "https://github.com/pandawa/resource-contracts/issues",
+                "source": "https://github.com/pandawa/resource-contracts/tree/master"
+            },
+            "time": "2022-09-07T15:29:46+00:00"
+        },
+        {
             "name": "pandawa/routing",
             "version": "dev-master",
             "source": {
@@ -2716,6 +3341,362 @@
                 "source": "https://github.com/pandawa/routing-contracts/tree/master"
             },
             "time": "2022-09-06T12:05:28+00:00"
+        },
+        {
+            "name": "pandawa/serializer-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/serializer-bundle.git",
+                "reference": "81c199b841af8aa0c9c3545389669105f94f8732"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/serializer-bundle/zipball/81c199b841af8aa0c9c3545389669105f94f8732",
+                "reference": "81c199b841af8aa0c9c3545389669105f94f8732",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "php": ">=8.1",
+                "symfony/property-access": "^6.1",
+                "symfony/serializer": "^6.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\SerializerBundle\\SerializerBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\SerializerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa serializer bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/serializer-bundle/issues",
+                "source": "https://github.com/pandawa/serializer-bundle/tree/master"
+            },
+            "time": "2022-09-26T05:41:33+00:00"
+        },
+        {
+            "name": "pandawa/transformer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/transformer.git",
+                "reference": "32f521d89ae4dfe2eba3ea14c02198ec7f5cab36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/transformer/zipball/32f521d89ae4dfe2eba3ea14c02198ec7f5cab36",
+                "reference": "32f521d89ae4dfe2eba3ea14c02198ec7f5cab36",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/collections": "^9.0",
+                "illuminate/support": "^9.0",
+                "pandawa/transformer-contracts": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Component\\Transformer\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa transformer component",
+            "support": {
+                "issues": "https://github.com/pandawa/transformer/issues",
+                "source": "https://github.com/pandawa/transformer/tree/master"
+            },
+            "time": "2022-09-27T15:06:05+00:00"
+        },
+        {
+            "name": "pandawa/transformer-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/transformer-contracts.git",
+                "reference": "8ab4b67cd4719da48465055db550659a974e5b5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/transformer-contracts/zipball/8ab4b67cd4719da48465055db550659a974e5b5e",
+                "reference": "8ab4b67cd4719da48465055db550659a974e5b5e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^9.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Contracts\\Transformer\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa transformer contracts",
+            "support": {
+                "issues": "https://github.com/pandawa/transformer-contracts/issues",
+                "source": "https://github.com/pandawa/transformer-contracts/tree/master"
+            },
+            "time": "2022-09-05T06:16:16+00:00"
+        },
+        {
+            "name": "pandawa/translation-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/translation-bundle.git",
+                "reference": "36b65ac49618735ca247c2ab23166fe991cd4d5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/translation-bundle/zipball/36b65ac49618735ca247c2ab23166fe991cd4d5c",
+                "reference": "36b65ac49618735ca247c2ab23166fe991cd4d5c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/translation": "^9.0",
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\TranslationBundle\\TranslationBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\TranslationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa translation bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/translation-bundle/issues",
+                "source": "https://github.com/pandawa/translation-bundle/tree/master"
+            },
+            "time": "2022-09-11T14:53:24+00:00"
+        },
+        {
+            "name": "pandawa/validation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/validation.git",
+                "reference": "f2a25b9fe385721e8a7128437d486b2fed2554d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/validation/zipball/f2a25b9fe385721e8a7128437d486b2fed2554d8",
+                "reference": "f2a25b9fe385721e8a7128437d486b2fed2554d8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "illuminate/validation": "^9.0",
+                "pandawa/validation-contracts": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Component\\Validation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa validation component",
+            "support": {
+                "issues": "https://github.com/pandawa/validation/issues",
+                "source": "https://github.com/pandawa/validation/tree/master"
+            },
+            "time": "2022-09-23T06:06:11+00:00"
+        },
+        {
+            "name": "pandawa/validation-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/validation-bundle.git",
+                "reference": "466f761aa944dee43c65f59a65a9d16a44448e45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/validation-bundle/zipball/466f761aa944dee43c65f59a65a9d16a44448e45",
+                "reference": "466f761aa944dee43c65f59a65a9d16a44448e45",
+                "shasum": ""
+            },
+            "require": {
+                "pandawa/dependency-injection-bundle": "^5.0",
+                "pandawa/foundation-bundle": "^5.0",
+                "pandawa/translation-bundle": "^5.0",
+                "pandawa/validation": "^5.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pandawa\\Bundle\\ValidationBundle\\ValidationBundle"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Bundle\\ValidationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa validation bundle",
+            "support": {
+                "issues": "https://github.com/pandawa/validation-bundle/issues",
+                "source": "https://github.com/pandawa/validation-bundle/tree/master"
+            },
+            "time": "2022-09-20T07:05:43+00:00"
+        },
+        {
+            "name": "pandawa/validation-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pandawa/validation-contracts.git",
+                "reference": "7954b1f241b2238a65dea5552bac70ae98cc0bc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pandawa/validation-contracts/zipball/7954b1f241b2238a65dea5552bac70ae98cc0bc2",
+                "reference": "7954b1f241b2238a65dea5552bac70ae98cc0bc2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pandawa\\Contracts\\Validation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Iqbal Maulana",
+                    "email": "iq.bluejack@gmail.com"
+                }
+            ],
+            "description": "The pandawa validation contracts",
+            "support": {
+                "issues": "https://github.com/pandawa/validation-contracts/issues",
+                "source": "https://github.com/pandawa/validation-contracts/tree/master"
+            },
+            "time": "2022-09-11T14:53:51+00:00"
         },
         {
             "name": "pandawa/view-bundle",
@@ -3397,6 +4378,161 @@
                 "source": "https://github.com/spiral/attributes"
             },
             "time": "2022-05-26T15:05:35+00:00"
+        },
+        {
+            "name": "spiral/core",
+            "version": "2.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/core.git",
+                "reference": "bbc0a4a1d3c4f14d8d7354d94a05577e60129416"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/core/zipball/bbc0a4a1d3c4f14d8d7354d94a05577e60129416",
+                "reference": "bbc0a4a1d3c4f14d8d7354d94a05577e60129416",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/container": "^1.1|^2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "phpunit/phpunit": "^8.5|^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.15.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\Core\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                }
+            ],
+            "description": "IoC container, IoC scopes, factory, memory, configuration interfaces",
+            "homepage": "https://spiral.dev",
+            "support": {
+                "issues": "https://github.com/spiral/framework/issues",
+                "source": "https://github.com/spiral/core"
+            },
+            "time": "2022-09-01T21:11:51+00:00"
+        },
+        {
+            "name": "spiral/logger",
+            "version": "2.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/logger.git",
+                "reference": "14ea05f8a24a5d4ecb3b8811e34948d3a735576e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/logger/zipball/14ea05f8a24a5d4ecb3b8811e34948d3a735576e",
+                "reference": "14ea05f8a24a5d4ecb3b8811e34948d3a735576e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "psr/log": "1 - 3",
+                "spiral/core": "^2.14.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "phpunit/phpunit": "^8.5|^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.15.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\Logger\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                }
+            ],
+            "description": "LogFactory and global log listeners",
+            "homepage": "https://spiral.dev",
+            "support": {
+                "issues": "https://github.com/spiral/framework/issues",
+                "source": "https://github.com/spiral/logger"
+            },
+            "time": "2022-09-12T15:13:31+00:00"
+        },
+        {
+            "name": "spiral/tokenizer",
+            "version": "2.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spiral/tokenizer.git",
+                "reference": "45f704219f115fb2aa3b384aa83ed8ec34cff9ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spiral/tokenizer/zipball/45f704219f115fb2aa3b384aa83ed8ec34cff9ca",
+                "reference": "45f704219f115fb2aa3b384aa83ed8ec34cff9ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "spiral/core": "^2.14.1",
+                "spiral/logger": "^2.14.1",
+                "symfony/finder": "^5.1|^6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5|^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.15.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spiral\\Tokenizer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Titov (wolfy-j)",
+                    "email": "wolfy-j@spiralscout.com"
+                }
+            ],
+            "description": "Static Analysis: Class and Invocation locators",
+            "homepage": "https://spiral.dev",
+            "support": {
+                "issues": "https://github.com/spiral/framework/issues",
+                "source": "https://github.com/spiral/tokenizer"
+            },
+            "time": "2022-09-12T15:14:10+00:00"
         },
         {
             "name": "symfony/config",
@@ -5202,6 +6338,174 @@
             "time": "2022-06-27T17:24:16+00:00"
         },
         {
+            "name": "symfony/property-access",
+            "version": "v6.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/property-access.git",
+                "reference": "25108ee9b62d6ef0815007d9c7cf6a7ba40bb7c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/25108ee9b62d6ef0815007d9c7cf6a7ba40bb7c5",
+                "reference": "25108ee9b62d6ef0815007d9c7cf6a7ba40bb7c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/property-info": "^5.4|^6.0"
+            },
+            "require-dev": {
+                "symfony/cache": "^5.4|^6.0"
+            },
+            "suggest": {
+                "psr/cache-implementation": "To cache access methods."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\PropertyAccess\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides functions to read and write from/to an object or array using a simple string notation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "access",
+                "array",
+                "extraction",
+                "index",
+                "injection",
+                "object",
+                "property",
+                "property path",
+                "reflection"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/property-access/tree/v6.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-27T17:24:16+00:00"
+        },
+        {
+            "name": "symfony/property-info",
+            "version": "v6.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/property-info.git",
+                "reference": "2fc363ed2f2b5d3b231ed0824e066d140d3fd1d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/2fc363ed2f2b5d3b231ed0824e066d140d3fd1d8",
+                "reference": "2fc363ed2f2b5d3b231ed0824e066d140d3fd1d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/string": "^5.4|^6.0"
+            },
+            "conflict": {
+                "phpdocumentor/reflection-docblock": "<5.2",
+                "phpdocumentor/type-resolver": "<1.5.1",
+                "symfony/dependency-injection": "<5.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "phpdocumentor/reflection-docblock": "^5.2",
+                "phpstan/phpdoc-parser": "^1.0",
+                "symfony/cache": "^5.4|^6.0",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/serializer": "^5.4|^6.0"
+            },
+            "suggest": {
+                "phpdocumentor/reflection-docblock": "To use the PHPDoc",
+                "psr/cache-implementation": "To cache results",
+                "symfony/doctrine-bridge": "To use Doctrine metadata",
+                "symfony/serializer": "To use Serializer metadata"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\PropertyInfo\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kévin Dunglas",
+                    "email": "dunglas@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Extracts information about PHP class' properties using metadata of popular sources",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "doctrine",
+                "phpdoc",
+                "property",
+                "symfony",
+                "type",
+                "validator"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/property-info/tree/v6.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-07-19T08:34:05+00:00"
+        },
+        {
             "name": "symfony/routing",
             "version": "v6.1.5",
             "source": {
@@ -5288,6 +6592,107 @@
                 }
             ],
             "time": "2022-09-09T09:26:14+00:00"
+        },
+        {
+            "name": "symfony/serializer",
+            "version": "v6.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/serializer.git",
+                "reference": "0986800f0c394bd46443afbf0a05c4386ffa1cd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/0986800f0c394bd46443afbf0a05c4386ffa1cd6",
+                "reference": "0986800f0c394bd46443afbf0a05c4386ffa1cd6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "doctrine/annotations": "<1.12",
+                "phpdocumentor/reflection-docblock": "<3.2.2",
+                "phpdocumentor/type-resolver": "<1.4.0",
+                "symfony/dependency-injection": "<5.4",
+                "symfony/property-access": "<5.4",
+                "symfony/property-info": "<5.4",
+                "symfony/uid": "<5.4",
+                "symfony/yaml": "<5.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.12",
+                "phpdocumentor/reflection-docblock": "^3.2|^4.0|^5.0",
+                "symfony/cache": "^5.4|^6.0",
+                "symfony/config": "^5.4|^6.0",
+                "symfony/dependency-injection": "^5.4|^6.0",
+                "symfony/error-handler": "^5.4|^6.0",
+                "symfony/filesystem": "^5.4|^6.0",
+                "symfony/form": "^5.4|^6.0",
+                "symfony/http-foundation": "^5.4|^6.0",
+                "symfony/http-kernel": "^5.4|^6.0",
+                "symfony/mime": "^5.4|^6.0",
+                "symfony/property-access": "^5.4|^6.0",
+                "symfony/property-info": "^5.4|^6.0",
+                "symfony/uid": "^5.4|^6.0",
+                "symfony/validator": "^5.4|^6.0",
+                "symfony/var-dumper": "^5.4|^6.0",
+                "symfony/var-exporter": "^5.4|^6.0",
+                "symfony/yaml": "^5.4|^6.0"
+            },
+            "suggest": {
+                "psr/cache-implementation": "For using the metadata cache.",
+                "symfony/config": "For using the XML mapping loader.",
+                "symfony/mime": "For using a MIME type guesser within the DataUriNormalizer.",
+                "symfony/property-access": "For using the ObjectNormalizer.",
+                "symfony/property-info": "To deserialize relations.",
+                "symfony/var-exporter": "For using the metadata compiler.",
+                "symfony/yaml": "For using the default YAML mapping loader."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Serializer\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/serializer/tree/v6.1.5"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-09-29T11:04:32+00:00"
         },
         {
             "name": "symfony/service-contracts",
