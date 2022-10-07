@@ -53,7 +53,7 @@
                     </nav>
                 </div>
                 <div class="p-4">
-                    <Link href="/" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                    <Link href="/instances" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <component is="arrow-left-circle-icon" class="mr-2 h-6 w-6 flex-shrink-0 text-indigo-300" aria-hidden="true" />
                         {{ instance.name }}
                     </Link>

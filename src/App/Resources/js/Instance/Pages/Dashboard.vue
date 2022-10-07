@@ -59,7 +59,7 @@ export default {
     data() {
         return {
             running: false,
-            connecting: false,
+            connecting: true,
             timeout: null,
             workload: [],
             workers: [],
