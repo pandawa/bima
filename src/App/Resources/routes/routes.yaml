@@ -2,6 +2,10 @@ instance:
   type: group
   children: instances.yaml
 
+user:
+  type: group
+  children: users.yaml
+
 pending_job:
   type: group
   children: jobs.yaml

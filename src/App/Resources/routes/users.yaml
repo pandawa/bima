@@ -1,0 +1,7 @@
+__defines:
+  Controller: Bima\App\Http\Controller
+
+user.list:
+  type: get
+  uri: /users
+  controller: ${Controller}\UserController@index
