@@ -4,6 +4,7 @@ __defines:
 instance.list:
   type: get
   uri: /instances
+  name: instance.list
   controller: ${Controller}\InstanceController@index
 
 instance.show:

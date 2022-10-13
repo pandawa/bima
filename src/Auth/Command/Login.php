@@ -13,6 +13,7 @@ use Pandawa\Annotations\Resource\ApiMessage;
 #[ApiMessage(
     uri: 'auth/login',
     methods: ['post'],
+    routeName: 'auth.login',
     routeGroup: 'api',
     options: [
         'rules' => [
