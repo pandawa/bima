@@ -70,11 +70,5 @@
         "allow-plugins": {
             "symfony/thanks": true
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/iqbalmaulana/Codes/pandawa/pandawa/src/Bundle/ViewBundle"
-        }
-    ]
+    }
 }
