@@ -18,7 +18,8 @@ return [
     */
     'groups' => [
         'api' => [
-            'prefix' => '/api'
+            'prefix' => '/api',
+            'middleware' => ['web'],
         ]
     ],
 ];

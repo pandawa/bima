@@ -18,6 +18,7 @@ use Pandawa\Component\Eloquent\Model;
     only: ['store'],
     options: [
         'store' => [
+            'middleware' => ['auth'],
             'rules' => [
                 [
                     'constraints' => [
@@ -32,6 +33,10 @@ use Pandawa\Component\Eloquent\Model;
 )]
 class User extends Model
 {
+    protected $hidden = [
+        'password',
+    ];
+
     protected function password(): Attribute
     {
         return Attribute::make(

@@ -1,11 +1,19 @@
 instance:
   type: group
+  middleware: [web, auth]
   children: instances.yaml
 
 user:
   type: group
+  middleware: [web, auth]
   children: users.yaml
 
 pending_job:
   type: group
+  middleware: [web, auth]
   children: jobs.yaml
+
+auth:
+  type: group
+  middleware: [web]
+  children: auth.yaml

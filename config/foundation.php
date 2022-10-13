@@ -52,7 +52,9 @@ return [
             ],
             'groups' => [
                 'web' => [
-                    Bima\Http\Middleware\HandleInertiaRequests::class,
+                    Bima\App\Http\Middleware\EncryptCookies::class,
+                    Illuminate\Session\Middleware\StartSession::class,
+                    Bima\App\Http\Middleware\HandleInertiaRequests::class,
                 ],
             ],
             'routes' => [],

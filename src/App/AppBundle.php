@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Bima\App;
 
 use Inertia\Inertia;
+use Pandawa\Bundle\RoutingBundle\Plugin\ImportMiddlewareAnnotationPlugin;
 use Pandawa\Bundle\RoutingBundle\Plugin\ImportRoutesPlugin;
 use Pandawa\Bundle\ViewBundle\Plugin\RegisterViewPathPlugin;
 use Pandawa\Component\Foundation\Bundle\Bundle;
@@ -25,6 +26,7 @@ class AppBundle extends Bundle implements HasPluginInterface
         return [
             new RegisterViewPathPlugin(),
             new ImportRoutesPlugin(),
+            new ImportMiddlewareAnnotationPlugin(),
         ];
     }
 }

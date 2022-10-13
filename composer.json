@@ -12,12 +12,17 @@
         "laravel/horizon": "^5.10",
         "laravel/tinker": "^2.7",
         "pandawa/annotation-bundle": "^5.0",
+        "pandawa/auth-bundle": "^5.0",
         "pandawa/bus-bundle": "^5.0",
+        "pandawa/cache-bundle": "^5.0",
         "pandawa/eloquent-bundle": "^5.0",
         "pandawa/foundation-bundle": "^5.0",
+        "pandawa/octane-bundle": "^5.0",
+        "pandawa/redis-bundle": "^5.0",
         "pandawa/resource-annotations": "^5.0",
         "pandawa/resource-bundle": "^5.0",
         "pandawa/routing-bundle": "^5.0",
+        "pandawa/session-bundle": "^5.0",
         "pandawa/view-bundle": "^5.0"
     },
     "require-dev": {

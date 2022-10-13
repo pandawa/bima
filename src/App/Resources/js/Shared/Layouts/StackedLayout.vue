@@ -5,7 +5,7 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
+                            <img class="h-8 w-8" :src="$page.props.app_logo"
                                  alt="Your Company"/>
                         </div>
                         <div class="hidden md:block">
@@ -26,7 +26,11 @@
                                     <MenuButton
                                         class="flex max-w-xs items-center rounded-full bg-indigo-600 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600">
                                         <span class="sr-only">Open user menu</span>
-                                        <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt=""/>
+                                        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-50">
+                                            <span class="text-lg font-medium leading-none text-gray-600">
+                                                {{ initial }}
+                                            </span>
+                                        </span>
                                     </MenuButton>
                                 </div>
                                 <transition enter-active-class="transition ease-out duration-100"
@@ -68,19 +72,18 @@
                     </DisclosureButton>
                 </div>
                 <div class="border-t border-indigo-700 pt-4 pb-3">
-                    <div class="flex items-center px-5">
+                    <div v-if="user" class="flex items-center px-5">
                         <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt=""/>
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-50">
+                                <span class="text-lg font-medium leading-none text-gray-600">
+                                    {{ initial }}
+                                </span>
+                            </span>
                         </div>
                         <div class="ml-3">
-                            <div class="text-base font-medium text-white">{{ user.name }}</div>
-                            <div class="text-sm font-medium text-indigo-300">{{ user.email }}</div>
+                            <div class="text-base font-medium text-white">{{ $page.props.user.name }}</div>
+                            <div class="text-sm font-medium text-indigo-300">{{ $page.props.user.email  }}</div>
                         </div>
-                        <button type="button"
-                                class="ml-auto flex-shrink-0 rounded-full bg-indigo-600 p-1 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600">
-                            <span class="sr-only">View notifications</span>
-                            <BellIcon class="h-6 w-6" aria-hidden="true"/>
-                        </button>
                     </div>
                     <div class="mt-3 space-y-1 px-2">
                         <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href"
@@ -130,18 +133,13 @@ export default {
             navigation: [
                 {name: 'Instances', href: '/instances', current: false},
                 {name: 'Users', href: '/users', current: false},
-                {name: 'Environment', href: '#', current: false},
+                //{name: 'Environment', href: '#', current: false},
             ],
             userNavigation: [
-                {name: 'Your Profile', href: '#'},
-                {name: 'Settings', href: '#'},
-                {name: 'Sign out', href: '#'},
-            ],
-            user: {
-                name: 'Tom Cook',
-                email: 'tom@example.com',
-                imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            }
+                //{name: 'Your Profile', href: '#'},
+                //{name: 'Settings', href: '#'},
+                {name: 'Sign out', href: '/auth/logout'},
+            ]
         };
     },
 
@@ -154,6 +152,18 @@ export default {
             }
 
             nav.current = false;
+        }
+    },
+
+    computed: {
+        initial() {
+            const parts = this.$page.props.user.name.split(' ');
+
+            if (parts.length >= 2) {
+                return (parts[0][0] + parts[1][0]).toUpperCase();
+            }
+
+            return this.$page.props.user.name.substring(0, 2).toUpperCase();
         }
     }
 }

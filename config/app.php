@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Pandawa'),
 
+    'app_logo' => env('APP_LOGO', 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300'),
+    'sidebar_logo' => env('SIDEBAR_LOGO', 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300'),
+    'auth_logo' => env('AUTH_LOGO', 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

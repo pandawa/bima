@@ -18,7 +18,7 @@
                                 </div>
                             </TransitionChild>
                             <div class="flex flex-shrink-0 items-center px-4">
-                                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company" />
+                                <img class="h-8 w-auto" :src="$page.props.sidebar_logo" />
                             </div>
                             <div class="mt-5 h-0 flex-1 overflow-y-auto">
                                 <nav class="space-y-1 px-2">
@@ -42,7 +42,7 @@
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex flex-grow flex-col overflow-y-auto bg-indigo-700 pt-5">
                 <div class="flex flex-shrink-0 items-center px-4">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company" />
+                    <img class="h-8 w-auto" :src="$page.props.sidebar_logo" />
                 </div>
                 <div class="mt-5 flex flex-1 flex-col">
                     <nav class="flex-1 space-y-1 px-2 pb-4">
@@ -81,7 +81,11 @@
                             <div>
                                 <MenuButton class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                    <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-500">
+                                        <span class="text-lg font-medium leading-none text-white">
+                                            {{ initial }}
+                                        </span>
+                                    </span>
                                 </MenuButton>
                             </div>
                             <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
@@ -168,9 +172,9 @@ export default {
                 { name: 'Failed Jobs', href: '/instances/' + this.instance.id + '/failed', icon: XCircleIcon, current: false },
             ],
             userNavigation: [
-                { name: 'Your Profile', href: '#' },
-                { name: 'Settings', href: '#' },
-                { name: 'Sign out', href: '#' },
+                // { name: 'Your Profile', href: '#' },
+                // { name: 'Settings', href: '#' },
+                { name: 'Sign out', href: '/auth/logout' },
             ],
             sidebarOpen: false,
         };
@@ -187,6 +191,17 @@ export default {
             if (nav.current !== false) {
                 nav.current = false;
             }
+        }
+    },
+    computed: {
+        initial() {
+            const parts = this.$page.props.user.name.split(' ');
+
+            if (parts.length >= 2) {
+                return (parts[0][0] + parts[1][0]).toUpperCase();
+            }
+
+            return this.$page.props.user.name.substring(0, 2).toUpperCase();
         }
     }
 }

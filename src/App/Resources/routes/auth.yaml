@@ -1,0 +1,16 @@
+__defines:
+  Controller: Bima\App\Http\Controller
+
+auth.login:
+  type: get
+  uri: /auth/login
+  name: login
+  middleware: [guest]
+  controller: ${Controller}\AuthController@login
+
+auth.logout:
+  type: get
+  uri: /auth/logout
+  name: logout
+  middleware: [auth]
+  controller: ${Controller}\AuthController@logout

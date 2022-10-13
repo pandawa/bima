@@ -14,6 +14,7 @@ use Pandawa\Annotations\Resource\ApiMessage;
     uri: 'instances',
     methods: ['post'],
     routeGroup: 'api',
+    middleware: ['auth'],
     options: [
         'rules' => [
             [
