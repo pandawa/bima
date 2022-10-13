@@ -3853,12 +3853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pandawa/session-bundle.git",
-                "reference": "98f17f1d38311dc0c607ac81c5247e65c9fef9e8"
+                "reference": "53c6abe2b961c2812d974c5b4793ad0cba9f90e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pandawa/session-bundle/zipball/98f17f1d38311dc0c607ac81c5247e65c9fef9e8",
-                "reference": "98f17f1d38311dc0c607ac81c5247e65c9fef9e8",
+                "url": "https://api.github.com/repos/pandawa/session-bundle/zipball/53c6abe2b961c2812d974c5b4793ad0cba9f90e1",
+                "reference": "53c6abe2b961c2812d974c5b4793ad0cba9f90e1",
                 "shasum": ""
             },
             "require": {
@@ -3901,7 +3901,7 @@
                 "issues": "https://github.com/pandawa/session-bundle/issues",
                 "source": "https://github.com/pandawa/session-bundle/tree/master"
             },
-            "time": "2022-10-13T14:30:27+00:00"
+            "time": "2022-10-13T17:03:46+00:00"
         },
         {
             "name": "pandawa/transformer",
