@@ -20,7 +20,7 @@
                            :instance="instance" />
         </div>
 
-        <create-instance @created="addInstance($event)" @closed="showCreate = false" :show="showCreate" />
+        <create-instance @created="addInstance($event)" @closed="showCreate = false" :environments="environments" :show="showCreate" />
     </Layout>
 </template>
 
@@ -37,6 +37,7 @@ export default {
     },
     props: {
         instances: Array,
+        environments: Array,
     },
 
     data() {

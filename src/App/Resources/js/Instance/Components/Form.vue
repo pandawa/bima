@@ -14,6 +14,13 @@
             </div>
         </div>
 
+        <div class="sm:col-span-6">
+            <label for="url" class="block text-sm font-medium text-gray-700">Environment</label>
+            <div class="mt-1">
+                <Select text-key="name" v-model="instance.environment_id" :options="environments" />
+            </div>
+        </div>
+
         <div :class="{'opacity-50': loading}" class="sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
             <button :disabled="loading" type="submit" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:col-start-2 sm:text-sm">
                 <template v-if="loading">
@@ -35,15 +42,25 @@
 </template>
 
 <script>
+import Select from "@/Shared/Components/Select.vue";
+import InputError from "@/Shared/Components/InputError.vue";
+
 export default {
+    components: {
+        InputError,
+        Select,
+    },
+
     props: {
         loading: Boolean,
+        environments: Array,
     },
 
     data() {
         return {
             instance: {
                 name: null,
+                environment_id: null,
                 url: null,
             },
         };
@@ -55,7 +72,7 @@ export default {
         },
 
         submit() {
-            if (this.instance.name && this.instance.url) {
+            if (this.instance.name && this.instance.url && this.instance.environment_id) {
                 this.$emit('submitted', this.instance);
             }
         }

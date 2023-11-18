@@ -19,25 +19,30 @@ use Pandawa\Annotations\Resource\ApiMessage;
         'rules' => [
             [
                 'constraints' => [
-                    'name' => 'required',
-                    'url'  => 'required|url',
+                    'name'           => 'required',
+                    'url'            => 'required|url',
+                    'environment_id' => 'required|numeric|exists:environments,id',
                 ],
-            ]
+            ],
         ],
     ],
 )]
 class CreateInstance
 {
-    public function __construct(public readonly string $name, public readonly string $url)
-    {
+    public function __construct(
+        public readonly string $name,
+        public readonly string $url,
+        public readonly int $environmentId,
+    ) {
     }
 
     public function handle(): Instance
     {
         return Instance::create([
-            'name'   => $this->name,
-            'url'    => $this->url,
-            'secret' => Instance::generateSecret(),
+            'name'           => $this->name,
+            'url'            => $this->url,
+            'environment_id' => $this->environmentId,
+            'secret'         => Instance::generateSecret(),
         ]);
     }
 }

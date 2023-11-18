@@ -25,6 +25,7 @@ const submit = () => {
 
     form.post(props.url, {
         errorBag: props.errorBag,
+        preserveScroll: true,
         onFinish: () => loading.value = false,
     });
 }
