@@ -44,6 +44,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'user'         => Auth::check() ? $this->userToArray(Auth::user()) : null,
+            'favicon'      => config('app.favicon'),
             'app_logo'     => config('app.app_logo'),
             'sidebar_logo' => config('app.sidebar_logo'),
             'auth_logo'    => config('app.auth_logo'),
