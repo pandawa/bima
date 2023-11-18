@@ -49,7 +49,9 @@
                             {{ supervisor.options.timeout }} sec
                         </td>
                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {{ supervisor.options.queue.replace(/,/g, ', ') }}
+                            <span v-for="queue of supervisor.options.queue.split(',')" class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">
+                                {{ queue }}
+                            </span>
                         </td>
                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 capitalize">
                             {{ supervisor.options.balance ? supervisor.options.balance : 'Disabled' }}
