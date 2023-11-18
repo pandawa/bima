@@ -37,7 +37,7 @@ class CreateInstance
         return Instance::create([
             'name'   => $this->name,
             'url'    => $this->url,
-            'secret' => sha1(uniqid()),
+            'secret' => Instance::generateSecret(),
         ]);
     }
 }

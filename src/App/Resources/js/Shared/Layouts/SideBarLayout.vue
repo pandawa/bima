@@ -113,11 +113,13 @@ import {
     Bars3BottomLeftIcon,
     ChartPieIcon,
     CheckCircleIcon,
+    CogIcon,
     ComputerDesktopIcon,
     PauseCircleIcon,
     RectangleStackIcon,
     ServerIcon,
     XCircleIcon,
+    XMarkIcon,
 } from "@heroicons/vue/24/outline";
 
 import {
@@ -152,6 +154,7 @@ export default {
         RectangleStackIcon,
         ServerIcon,
         XCircleIcon,
+        XMarkIcon,
         Bars3BottomLeftIcon,
         ArrowLeftCircleIcon,
     },
@@ -170,6 +173,7 @@ export default {
                 { name: 'Pending Jobs', href: '/instances/' + this.instance.id + '/pending', icon: PauseCircleIcon, current: false },
                 { name: 'Completed Jobs', href: '/instances/' + this.instance.id + '/completed', icon: CheckCircleIcon, current: false },
                 { name: 'Failed Jobs', href: '/instances/' + this.instance.id + '/failed', icon: XCircleIcon, current: false },
+                { name: 'Settings', href: '/instances/' + this.instance.id + '/settings', icon: CogIcon, current: false },
             ],
             userNavigation: [
                 // { name: 'Your Profile', href: '#' },

@@ -11,3 +11,8 @@ instance.show:
   type: get
   uri: /instances/{id}
   controller: ${Controller}\InstanceController@show
+
+instance.setting:
+  type: group
+  prefix: /instances/{instance}
+  children: instance_settings.yaml

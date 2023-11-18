@@ -13,5 +13,10 @@ use Pandawa\Component\Eloquent\Model;
 class Instance extends Model
 {
     use BelongsToEnvironment;
+
+    public static function generateSecret(): string
+    {
+        return substr(base64_encode(sha1(uniqid())), 0, 32);
+    }
 }
 

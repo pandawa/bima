@@ -14,7 +14,7 @@
                 </div>
             </div>
         </header>
-        <div class="mx-auto max-w-3xl mt-5">
+        <div class="mx-auto max-w-3xl mt-5 pb-5">
             <instance-card v-for="instance in availableInstances" class="mb-4"
                            :url="'/instances/' + instance.id"
                            :instance="instance" />

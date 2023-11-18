@@ -1,0 +1,22 @@
+__defines:
+    Controller: Bima\App\Http\Controller
+
+instance.setting.show:
+    type: get
+    uri: /settings
+    controller: ${Controller}\InstanceSettingController@show
+
+instance.setting.update:
+    type: post
+    uri: /settings
+    controller: ${Controller}\InstanceSettingController@update
+
+instance.setting.regenerate:
+    type: post
+    uri: /settings/regenerate
+    controller: ${Controller}\InstanceSettingController@regenerate
+
+instance.setting.delete:
+    type: delete
+    uri: /settings
+    controller: ${Controller}\InstanceSettingController@delete
