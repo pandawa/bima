@@ -42,7 +42,7 @@
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex flex-grow flex-col overflow-y-auto bg-indigo-700 pt-5">
                 <div class="flex flex-shrink-0 items-center px-4">
-                    <img class="h-8 w-auto" :src="$page.props.sidebar_logo" />
+                    <img class="h-12 w-auto" :src="$page.props.sidebar_logo" />
                 </div>
                 <div class="mt-5 flex flex-1 flex-col">
                     <nav class="flex-1 space-y-1 px-2 pb-4">

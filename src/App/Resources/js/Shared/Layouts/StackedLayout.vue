@@ -5,7 +5,7 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <img class="h-8 w-8" :src="$page.props.app_logo"
+                            <img class="h-10 w-10" :src="$page.props.app_logo"
                                  alt="Your Company"/>
                         </div>
                         <div class="hidden md:block">
