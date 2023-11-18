@@ -13,6 +13,11 @@ user:
   middleware: [web, auth]
   children: users.yaml
 
+environment:
+  type: group
+  middleware: [web, auth]
+  children: environments.yaml
+
 pending_job:
   type: group
   middleware: [web, auth]

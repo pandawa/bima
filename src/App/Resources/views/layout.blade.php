@@ -10,6 +10,7 @@
     {{-- Inertia --}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
 
+    @routes
     <script src="{{ mix('/js/app.js') }}" defer></script>
     @inertiaHead
 </head>

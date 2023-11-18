@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bima\Instance\Model;
 
+use Bima\Environment\Relation\BelongsToEnvironment;
 use Pandawa\Component\Eloquent\Model;
 
 /**
@@ -11,5 +12,6 @@ use Pandawa\Component\Eloquent\Model;
  */
 class Instance extends Model
 {
+    use BelongsToEnvironment;
 }
 

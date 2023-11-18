@@ -133,7 +133,7 @@ export default {
             navigation: [
                 {name: 'Instances', href: '/instances', current: false},
                 {name: 'Users', href: '/users', current: false},
-                //{name: 'Environment', href: '#', current: false},
+                {name: 'Environments', href: '/environments', current: false},
             ],
             userNavigation: [
                 //{name: 'Your Profile', href: '#'},

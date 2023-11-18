@@ -1,0 +1,19 @@
+__defines:
+    Controller: Bima\App\Http\Controller
+
+environment.list:
+    type: get
+    uri: /environments
+    controller: ${Controller}\EnvironmentController@index
+
+environment.create:
+    type: post
+    name: environment.create
+    uri: /environments
+    controller: ${Controller}\EnvironmentController@store
+
+environment.update:
+    type: post
+    name: environment.update
+    uri: /environments/{environment}
+    controller: ${Controller}\EnvironmentController@update
