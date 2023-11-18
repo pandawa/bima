@@ -6,6 +6,7 @@ namespace Bima\App\Http\Controller;
 
 use Bima\Environment\Model\Environment;
 use Bima\Instance\Model\Instance;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -14,11 +15,15 @@ use Inertia\Response;
  */
 class InstanceController
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
+        $environments = Environment::oldest('id')->get();
+        $currentEnv = (int) $request->query('env', $environments[0]->id);
+
         return Inertia::render('Instance/Pages/Index', [
-            'instances'    => Instance::all(),
-            'environments' => Environment::oldest('id')->get(),
+            'instances'    => Instance::latest()->where('environment_id', $currentEnv)->get(),
+            'environments' => $environments,
+            'currentEnv' => $currentEnv,
         ]);
     }
 

@@ -7,6 +7,9 @@
                         <h1 class="text-3xl font-semibold leading-tight tracking-tight text-gray-900">Instances</h1>
                     </div>
                     <div class="mt-4 flex md:mt-0 md:ml-4">
+                        <span class="w-40 mt-1">
+                            <Select v-model="currentEnv" :options="environments" text-key="name" />
+                        </span>
                         <button @click.prevent="showCreate = !showCreate" type="button" class="ml-3 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                             New Instance
                         </button>
@@ -28,9 +31,12 @@
 import Layout from '../../Shared/Layouts/StackedLayout'
 import InstanceCard from '../Containers/Card'
 import CreateInstance from "@/Instance/Containers/Create";
+import Select from "@/Shared/Components/Select.vue";
+import {Inertia} from "@inertiajs/inertia";
 
 export default {
     components: {
+        Select,
         Layout,
         InstanceCard,
         CreateInstance
@@ -38,6 +44,7 @@ export default {
     props: {
         instances: Array,
         environments: Array,
+        currentEnv: Number,
     },
 
     data() {
@@ -49,6 +56,16 @@ export default {
 
     mounted() {
         this.availableInstances = this.instances;
+    },
+
+    watch: {
+        currentEnv(newEnv) {
+            Inertia.visit(route('instance.list'), {
+                data: {
+                    env: newEnv
+                }
+            })
+        }
     },
 
     methods: {
