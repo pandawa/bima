@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" defer>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <title inertia>{{ config('app.name', 'Bima') }}</title>
+
     {{-- Inertia --}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
 
