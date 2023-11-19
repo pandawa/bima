@@ -1,3 +1,48 @@
+<script setup>
+import {Dialog, DialogPanel, TransitionChild, TransitionRoot} from '@headlessui/vue'
+import UserForm from "@/User/Components/UserForm";
+import {ref, watch} from "vue";
+import {useForm} from "@inertiajs/inertia-vue3";
+
+const props = defineProps({
+    show: Boolean,
+});
+
+const emit = defineEmits(['closed']);
+
+const form = useForm({
+    name: '',
+    email: '',
+})
+
+const open = ref(false);
+const creating = ref(false);
+
+const close = () => {
+    open.value = false;
+
+    emit('closed');
+};
+
+const create = (form) => {
+    creating.value = true;
+    form.post(route('user.store'), {
+        preserveScroll: true,
+        errorBag: 'createUser',
+        onSuccess: () => {
+            emit('created');
+
+            open.value = false;
+        },
+        onFinish: () => creating.value = false,
+    })
+};
+
+watch(() => props.show, (newShow) => {
+    open.value = newShow;
+});
+</script>
+
 <template>
     <TransitionRoot as="template" :show="open">
         <Dialog as="div" class="relative z-10" @close="close()">
@@ -16,7 +61,7 @@
                                 </p>
                             </div>
                             <div class="px-6 py-4 text-sm">
-                                <user-form :loading="creating" @submitted="create($event)" @closed="close()" />
+                                <UserForm :loading="creating" @submitted="create($event)" @closed="close()" />
                             </div>
                         </DialogPanel>
                     </TransitionChild>
@@ -25,54 +70,3 @@
         </Dialog>
     </TransitionRoot>
 </template>
-
-<script>
-import {Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot} from '@headlessui/vue'
-import {ArrowRightCircleIcon} from '@heroicons/vue/24/solid'
-import UserForm from "@/User/Components/UserForm";
-
-export default {
-    components: {
-        Dialog,
-        DialogPanel,
-        DialogTitle,
-        TransitionChild,
-        TransitionRoot,
-        ArrowRightCircleIcon,
-        UserForm,
-    },
-    props: {
-        show: Boolean,
-    },
-    data() {
-        return {
-            open: false,
-            creating: false,
-        };
-    },
-
-    watch: {
-        show() {
-            this.open = this.show;
-        }
-    },
-
-    methods: {
-        close() {
-            this.open = false;
-            this.$emit('closed');
-        },
-
-        create(user) {
-            this.creating = true;
-            this.axios.post('/api/users', user)
-                .then(response => {
-                    this.creating = false;
-                    this.open = false;
-
-                    this.$emit('created', response.data.data)
-                });
-        }
-    }
-}
-</script>

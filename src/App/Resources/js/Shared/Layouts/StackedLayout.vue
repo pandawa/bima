@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-full">
+    <div class="min-h-full pb-5">
         <Disclosure as="nav" class="bg-indigo-600" v-slot="{ open }">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
@@ -98,6 +98,18 @@
         <main>
             <slot/>
         </main>
+
+        <SuccessDialog v-if="$page.props.message.success" @close="$page.props.message.success = null" title="Action succeed" :show="true">
+            <p class="p-2 text-sm text-gray-500">
+                {{ $page.props.message.success }}
+            </p>
+        </SuccessDialog>
+
+        <ErrorDialog v-if="$page.props.message.error" @close="$page.props.message.error = null" :show="true">
+            <p class="p-2 text-sm text-gray-500">
+                {{ $page.props.message.error }}
+            </p>
+        </ErrorDialog>
     </div>
 </template>
 
@@ -105,9 +117,13 @@
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
 import {Bars3Icon, BellIcon, PlusIcon, XMarkIcon} from '@heroicons/vue/24/outline'
 import {Link} from "@inertiajs/inertia-vue3";
+import SuccessDialog from "@/Shared/Components/SuccessDialog.vue";
+import ErrorDialog from "@/Shared/Components/ErrorDialog.vue";
 
 export default {
     components: {
+        ErrorDialog,
+        SuccessDialog,
         Link,
 
         Disclosure,

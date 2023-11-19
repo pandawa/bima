@@ -6,36 +6,19 @@ namespace Bima\User\Model;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Facades\Hash;
-use Pandawa\Annotations\Resource\ApiResource;
 use Pandawa\Component\Eloquent\Model;
 
-/**
- * @author  Iqbal Maulana <iq.bluejack@gmail.com>
- */
-#[ApiResource(
-    uri: 'users',
-    routeGroup: 'api',
-    only: ['store'],
-    options: [
-        'store' => [
-            'middleware' => ['auth'],
-            'rules' => [
-                [
-                    'constraints' => [
-                        'name'     => 'required',
-                        'email'    => 'required|email',
-                        'password' => 'required',
-                    ],
-                ],
-            ],
-        ],
-    ]
-)]
+
 class User extends Model
 {
     protected $hidden = [
         'password',
     ];
+
+    public static function newPassword(): string
+    {
+        return substr(base64_encode(uniqid()), 0, 18);
+    }
 
     protected function password(): Attribute
     {

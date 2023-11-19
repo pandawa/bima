@@ -5,3 +5,28 @@ user.list:
   type: get
   uri: /users
   controller: ${Controller}\UserController@index
+
+user.show:
+  type: get
+  uri: /users/{user}
+  controller: ${Controller}\UserController@show
+
+user.store:
+  type: post
+  uri: /users
+  controller: ${Controller}\UserController@store
+
+user.update:
+  type: post
+  uri: /users/{user}
+  controller: ${Controller}\UserController@update
+
+user.generate_password:
+  type: post
+  uri: /users/{user}/generate-password
+  controller: ${Controller}\UserController@generatePassword
+
+user.delete:
+  type: delete
+  uri: /users/{user}
+  controller: ${Controller}\UserController@delete

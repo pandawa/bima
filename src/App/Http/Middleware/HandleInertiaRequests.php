@@ -48,6 +48,10 @@ class HandleInertiaRequests extends Middleware
             'app_logo'     => config('app.app_logo'),
             'sidebar_logo' => config('app.sidebar_logo'),
             'auth_logo'    => config('app.auth_logo'),
+            'message'      => [
+                'error'   => session('message.error'),
+                'success' => session('message.success'),
+            ],
         ]);
     }
 

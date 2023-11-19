@@ -49,6 +49,6 @@ class InstanceSettingController
     {
         Instance::findOrFail($id)->delete();
 
-        return to_route('instance.list');
+        return to_route('instance.list')->with('message.success', 'Instance has been delete successfully.');
     }
 }
