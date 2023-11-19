@@ -45,7 +45,7 @@ const submit = () => {
             </div>
 
             <div :class="{'opacity-50': loading}" class="flex items-center gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
-                <button :disabled="loading" type="submit" class="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                <button :disabled="loading" type="submit" class="rounded-md bg-amber-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
                     <template v-if="loading">
                     <span class="flex">
                         <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
