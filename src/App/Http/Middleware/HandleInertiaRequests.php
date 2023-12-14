@@ -2,6 +2,7 @@
 
 namespace Bima\App\Http\Middleware;
 
+use Bima\License\LicenseManager;
 use Illuminate\Auth\GenericUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +53,7 @@ class HandleInertiaRequests extends Middleware
                 'error'   => session('message.error'),
                 'success' => session('message.success'),
             ],
+            'license'      => LicenseManager::getLicense(),
         ]);
     }
 
